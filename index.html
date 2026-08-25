@@ -1,35 +1,255 @@
+<<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<main>
-  <article>
-    <img src="imagem-blog.png"
-      alt="Logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
+    <title>Meu Blog Tech</title>
 
-    <div>
-      <h2>Meu primeiro post</h2>
-      <p class="artigo-autor">Por: Marcelo Paludetto</p>
-      <p>
-        Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação
-        e curiosidades da área de tecnologia.
-      </p>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-      <button>❤️ <span>0</span></button>
-      <button>👍 <span>0</span></button>
-    </div>
-  </article>
+        body {
+            margin: 0;
+            background-color: white;
+            color: #1d3557;
+            font-family: Georgia, "Times New Roman", serif;
+        }
 
-  <article>
-    <img src="imagem-blog.png"
-      alt="Logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
+        /* CABEÇALHO */
+        header {
+            background-color: #1e4268;
+            color: white;
+            text-align: center;
+            padding: 38px 20px 32px;
+        }
 
-    <div>
-      <h2>Meu segundo post</h2>
-      <p class="artigo-autor">Por: Marcelo Paludetto</p>
-      <p>
-        Neste post vou compartilhar mais conteúdos sobre tecnologia e desenvolvimento.
-      </p>
+        header h1 {
+            margin: 0 0 20px;
+            font-size: 32px;
+        }
 
-      <button>❤️ <span>0</span></button>
-      <button>👍 <span>0</span></button>
-    </div>
-  </article>
-</main>
+        header p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        /* ÁREA DOS POSTS */
+        .posts {
+            display: flex;
+            gap: 31px;
+            padding: 32px 4px;
+            justify-content: center;
+        }
+
+        /* CARTÃO */
+        .post {
+            width: 31%;
+            min-height: 439px;
+            border: 1px solid #34495e;
+            text-align: center;
+            padding: 25px 18px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* IMAGEM / ÍCONE */
+        .post-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            margin-bottom: 23px;
+        }
+
+        /* TÍTULO */
+        .post h2 {
+            font-size: 24px;
+            line-height: 1.15;
+            margin: 0 0 20px;
+        }
+
+        /* AUTOR */
+        .autor {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        /* TEXTO */
+        .post p {
+            font-size: 16px;
+            line-height: 1.25;
+            margin: 0 0 17px;
+            color: #26384a;
+        }
+
+        .fonte {
+            margin-top: auto !important;
+        }
+
+        /* BOTÕES */
+        .botoes {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            margin-top: 0;
+        }
+
+        .botoes button {
+            background-color: #eeeeee;
+            border: 1px solid #999;
+            border-radius: 2px;
+            padding: 3px 9px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .botoes button:hover {
+            background-color: #dddddd;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 800px) {
+            .posts {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .post {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>Meu blog tech</h1>
+        <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+    </header>
+
+    <!-- POSTS -->
+    <main class="posts">
+
+        <!-- PRIMEIRO POST -->
+        <article class="post">
+
+            <div class="post-icon">
+                📖
+            </div>
+
+            <h2>Meu primeiro post</h2>
+
+            <div class="autor">
+                Por: Marcelo Paludetto
+            </div>
+
+            <p>
+                Boas-vindas ao meu novo blog!
+                Aqui vou compartilhar dicas de programação
+                e curiosidades da área de tecnologia.
+            </p>
+
+            <div class="botoes">
+                <button onclick="curtir(this)">💗 <span>0</span></button>
+                <button onclick="curtir(this)">👍 <span>0</span></button>
+            </div>
+
+        </article>
+
+
+        <!-- SEGUNDO POST -->
+        <article class="post">
+
+            <div class="post-icon">
+                🌌
+            </div>
+
+            <h2>
+                A quantidade de dados no mundo é surreal
+            </h2>
+
+            <div class="autor">
+                Por: Marcelo Paludetto
+            </div>
+
+            <p>
+                Estima-se que 90% de todos os dados existentes
+                no mundo hoje foram gerados apenas nos últimos
+                dois anos. Vivemos em uma verdadeira explosão
+                de informação que não para de acelerar.
+            </p>
+
+            <p class="fonte">
+                Fonte: Jornal Opção
+            </p>
+
+            <div class="botoes">
+                <button onclick="curtir(this)">💗 <span>0</span></button>
+                <button onclick="curtir(this)">👍 <span>0</span></button>
+            </div>
+
+        </article>
+
+
+        <!-- TERCEIRO POST -->
+        <article class="post">
+
+            <div class="post-icon">
+                📦
+            </div>
+
+            <h2>
+                O primeiro mouse não era de plástico
+            </h2>
+
+            <div class="autor">
+                Por: Giulliana Cestari
+            </div>
+
+            <p>
+                Antes do design ergonômico e das luzes RGB,
+                o primeiro mouse do mundo foi construído em
+                madeira! Criado por Douglas Engelbart em 1964,
+                ele tinha o formato de uma caixa quadrada e
+                apenas um botão.
+            </p>
+
+            <p class="fonte">
+                Fonte: TecMundo
+            </p>
+
+            <div class="botoes">
+                <button onclick="curtir(this)">💗 <span>0</span></button>
+                <button onclick="curtir(this)">👍 <span>0</span></button>
+            </div>
+
+        </article>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function curtir(botao) {
+            let numero = botao.querySelector("span");
+
+            let quantidade = parseInt(numero.textContent);
+
+            quantidade++;
+
+            numero.textContent = quantidade;
+        }
+    </script>
+
+</body>
+</html>
